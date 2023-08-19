@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summer Sale</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <header >
+        <div class="grid grid-cols-4 gap-4 items-center  bg-yellow-100 justify-center ">
+            <div class="text-center">
+                <h1 class="text-1xl">---SALE FEVER---</h1>
+                <p class="font-bold text-2xl mt-4">Purchase TK 200 or above & get <span class="text-fuchsia-600">20% off</span></p>
+                <div class="flex items-center gap-2 mt-4 justify-center">
+                    <h2>Use Promo Code</h2>
+                    <button class="text-white bg-fuchsia-600 p-1 rounded-lg">SELL200</button>
+                </div>
+            </div>
+    
+            <div>
+                <img src="Summer 1.png" alt="">
+            </div>
+        </div>
+        
+    </header>
+
+    <!-- Card Section -->
+    <section class="mt-9 ">
+        <h1 class="ml-28 font-bold text-2xl">Kitchenware</h1>
+        <div class="flex gap-4">
+            <div onclick="handleClickBtn(this)" class="card w-96 bg-base-100 shadow-xl ">
+                <figure class="px-10 pt-10">
+                  <img src="prod1.png" alt="Shoes" class="rounded-xl mx-auto " />
+                </figure>
+                <div class="card-body items-center         text-center">
+                    <p class="text-2xl text-orange-500">★★★☆☆</p>
+                    <h2 class="card-title font-bold">K. Accessories</h2>
+                    <p><span id="priceItem">39.00</span> TK</p>
+                    
+                  </div>
+              </div>
+    
+              <div onclick="handleClickBtn(this)" class="card w-96 bg-base-100 shadow-xl">
+                <figure class="px-10 pt-10">
+                  <img src="prod2.png" alt="Shoes" class="rounded-xl mx-auto " />
+                </figure>
+                <div class="card-body items-center         text-center">
+                    <p class="text-2xl text-orange-500">☆☆☆☆☆</p>
+                    <h2 class="card-title font-bold">K. Accessories</h2>
+                    <p> <span id="priceItem">25.00</span> TK</p>
+                  </div>
+              </div>
+    
+              <div onclick="handleClickBtn(this)" class="card w-96 bg-base-100 shadow-xl">
+                <figure class="px-10 pt-10">
+                  <img src="prod3.png" alt="Shoes" class="rounded-xl mx-auto " />
+                </figure>
+                <div class="card-body items-center         text-center">
+                    <p class="text-2xl text-orange-500">★★★★☆</p>
+                    <h2 class="card-title font-bold">Home Cooker</h2>
+                    <p> <span id="priceItem">49.00</span> TK</p>
+                  </div>
+              </div>      
+              
+              <div>
+                <p class="font-bold text-1xl mb-2">Have Coupon?</p>
+                <div class="flex">
+                    <input id="couponBox" class="w-40 border-2 p-2 rounded-l-lg" type="text" placeholder="coupon code">
+                    <button id="applyBtn" class="flex-shrink-0 text-white bg-fuchsia-600 p-2 rounded-r-lg">Apply</button>
+                </div>
+                <div class="selected-items" id="selected-items"></div>
+                <div>
+                    <h1>Total Price: <span id="totalPrice">0.00</span> TK</h1>
+                    <h1>Discount: <span id="discount">0.00</span> TK</h1>
+                    <h1>Total: <span id="total">0.00</span> TK</h1>
+                    <button id="make-purchase-btn" class="text-white bg-fuchsia-600 p-1 rounded-lg mt-4">Make Purchase</button>
+                </div>
+                
+              </div>
+              
+        </div>
+
+    </section>
+
+    <section class="mt-9 ">
+        <h1 class="ml-28 font-bold text-2xl">Sportswear</h1>
+        <div class="flex gap-4">
+            <div onclick="handleClickBtn(this)" class="card w-96 bg-base-100 shadow-xl">
+                <figure class="px-10 pt-10">
+                  <img src="prod4.png" alt="Shoes" class="rounded-xl mx-auto " />
+                </figure>
+                <div class="card-body items-center         text-center">
+                    <p class="text-2xl text-orange-500">★★☆☆☆</p>
+                    <h2 class="card-title font-bold">Sports Back Cap</h2>
+                    <p> <span id="priceItem">49.00</span> TK</p>
+                  </div>
+              </div>
+    
+              <div onclick="handleClickBtn(this)" class="card w-96 bg-base-100 shadow-xl">
+                <figure class="px-10 pt-10">
+                  <img src="prod5.png" alt="Shoes" class="rounded-xl mx-auto " />
+                </figure>
+                <div class="card-body items-center         text-center">
+                    <p class="text-2xl text-orange-500">★★★★☆</p>
+                    <h2 class="card-title font-bold">Full Jersey Set</h2>
+                    <p> <span id="priceItem">69.00</span> TK</p>
+                  </div>
+              </div>
+    
+              <div onclick="handleClickBtn(this)" class="card w-96 bg-base-100 shadow-xl">
+                <figure class="px-10 pt-10">
+                  <img src="prod6.png" alt="Shoes" class="rounded-xl mx-auto " />
+                </figure>
+                <div class="card-body items-center         text-center">
+                    <p class="text-2xl text-orange-500">★★★☆☆</p>
+                    <h2 class="card-title font-bold">Sports cates</h2>
+                    <p> <span id="priceItem">159.00</span> TK</p>
+                  </div>
+              </div>
+            
+            
+        </div>
+    </section>
+    
+    <dialog id="newModal" class="modal flex items-center justify-center">
+        <form method="dialog" class="modal-box w-4/5 max-w-6xl text-center">
+            <img src="congo.png" alt="" class="mx-auto my-4 max-h-60">
+            <h3 class="font-bold text-1xl my-4">Congratulations</h3>
+            <p class="py-4 text-sm text-slate-400">You purchased the product.</p>
+            <div class="modal-action">
+                <button class="btn text-white bg-fuchsia-600 p-2 rounded-lg mb-2" onclick="newModal.close()">Go Home</button>
+            </div>
+        </form>
+    </dialog>
+    
+
+    <script src="summersale.js"></script>
+</body>
+</html>
