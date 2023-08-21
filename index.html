@@ -4,32 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Summer Sale</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      @media (max-width: 320px) {
+          .full-viewport {
+              width: 100vw;
+              height: 100vh;
+          }
+      }
+  </style>
 </head>
 <body>
-    <header >
-        <div class="grid grid-cols-4 gap-4 items-center  bg-yellow-100 justify-center ">
-            <div class="text-center">
-                <h1 class="text-1xl">---SALE FEVER---</h1>
-                <p class="font-bold text-2xl mt-4">Purchase TK 200 or above & get <span class="text-fuchsia-600">20% off</span></p>
-                <div class="flex items-center gap-2 mt-4 justify-center">
-                    <h2>Use Promo Code</h2>
-                    <button class="text-white bg-fuchsia-600 p-1 rounded-lg">SELL200</button>
-                </div>
-            </div>
-    
-            <div>
-                <img src="Summer 1.png" alt="">
+  <header class="bg-yellow-100 py-8 sm:py-16 full-viewport">
+    <div class="container mx-auto px-4 flex flex-col items-center sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-40">
+        <div class="text-center sm:text-left">
+            <h1 class="text-xl sm:text-md">---SALE FEVER---</h1>
+            <p class="font-bold text-lg mt-2 mb-2 sm:text-3xl">Purchase TK 200 or<br>above & get <span class="text-fuchsia-600">20% off</span></p>
+            <div class="flex items-center justify-center sm:justify-start mt-4">
+                <h2 class="text-md sm:text-1xl mr-2">Use Promo Code</h2>
+                <button class="text-white bg-fuchsia-600 p-1 rounded-lg">SELL200</button>
             </div>
         </div>
-        
-    </header>
-
+        <div class="h-40 w-40 sm:h-60 sm:w-60">
+            <img src="Summer 1.png" alt="">
+        </div>
+    </div>
+</header>
+    
     <!-- Card Section -->
-    <section class="mt-9 ">
-        <h1 class="ml-28 font-bold text-2xl">Kitchenware</h1>
-        <div class="flex gap-4">
-            <div onclick="handleClickBtn(this)" class="card w-96 bg-base-100 shadow-xl ">
+    <section class="mt-9 max-w-screen-xl px-8 py-5 mx-auto text-black md:px-16 lg:px-24">
+        <h1 class="mb-8 font-bold text-2xl">Kitchenware</h1>
+        <div class="flex flex-wrap gap-4 md:flex-nowrap">
+            <div onclick="handleClickBtn(this)" class="card w-96 bg-base-100 shadow-xl border-2">
                 <figure class="px-10 pt-10">
                   <img src="prod1.png" alt="Shoes" class="rounded-xl mx-auto " />
                 </figure>
@@ -37,11 +45,11 @@
                     <p class="text-2xl text-orange-500">★★★☆☆</p>
                     <h2 class="card-title font-bold">K. Accessories</h2>
                     <p><span id="priceItem">39.00</span> TK</p>
-                    
+
                   </div>
               </div>
-    
-              <div onclick="handleClickBtn(this)" class="card w-96 bg-base-100 shadow-xl">
+
+              <div onclick="handleClickBtn(this)" class="card w-96 bg-base-100 shadow-xl border-2">
                 <figure class="px-10 pt-10">
                   <img src="prod2.png" alt="Shoes" class="rounded-xl mx-auto " />
                 </figure>
@@ -51,8 +59,8 @@
                     <p> <span id="priceItem">25.00</span> TK</p>
                   </div>
               </div>
-    
-              <div onclick="handleClickBtn(this)" class="card w-96 bg-base-100 shadow-xl">
+
+              <div onclick="handleClickBtn(this)" class="card w-96 bg-base-100 border-2 shadow-xl">
                 <figure class="px-10 pt-10">
                   <img src="prod3.png" alt="Shoes" class="rounded-xl mx-auto " />
                 </figure>
@@ -62,8 +70,8 @@
                     <p> <span id="priceItem">49.00</span> TK</p>
                   </div>
               </div>      
-              
-              <div>
+
+              <div class="w-full mt-4 md:w-72">
                 <p class="font-bold text-1xl mb-2">Have Coupon?</p>
                 <div class="flex">
                     <input id="couponBox" class="w-40 border-2 p-2 rounded-l-lg" type="text" placeholder="coupon code">
@@ -74,19 +82,19 @@
                     <h1>Total Price: <span id="totalPrice">0.00</span> TK</h1>
                     <h1>Discount: <span id="discount">0.00</span> TK</h1>
                     <h1>Total: <span id="total">0.00</span> TK</h1>
-                    <button id="make-purchase-btn" class="text-white bg-fuchsia-600 p-1 rounded-lg mt-4">Make Purchase</button>
+                    <label id="make-purchase-btn" for="my_modal_6" class="btn text-white bg-fuchsia-600 p-1 mt-4">Make Purchase</label>
                 </div>
-                
+
               </div>
-              
+
         </div>
 
     </section>
 
-    <section class="mt-9 ">
-        <h1 class="ml-28 font-bold text-2xl">Sportswear</h1>
-        <div class="flex gap-4">
-            <div onclick="handleClickBtn(this)" class="card w-96 bg-base-100 shadow-xl">
+    <section class="mt-9 max-w-screen-lg px-8 py-5  text-black md:px-16 lg:px-24">
+        <h1 class="mb-8 font-bold text-2xl">Sportswear</h1>
+        <div class="flex flex-wrap gap-4 md:flex-nowrap">
+            <div onclick="handleClickBtn(this)" class="card w-96 bg-base-100 shadow-xl border-2">
                 <figure class="px-10 pt-10">
                   <img src="prod4.png" alt="Shoes" class="rounded-xl mx-auto " />
                 </figure>
@@ -96,8 +104,8 @@
                     <p> <span id="priceItem">49.00</span> TK</p>
                   </div>
               </div>
-    
-              <div onclick="handleClickBtn(this)" class="card w-96 bg-base-100 shadow-xl">
+
+              <div onclick="handleClickBtn(this)" class="card w-96 bg-base-100 shadow-xl border-2">
                 <figure class="px-10 pt-10">
                   <img src="prod5.png" alt="Shoes" class="rounded-xl mx-auto " />
                 </figure>
@@ -107,8 +115,8 @@
                     <p> <span id="priceItem">69.00</span> TK</p>
                   </div>
               </div>
-    
-              <div onclick="handleClickBtn(this)" class="card w-96 bg-base-100 shadow-xl">
+
+              <div onclick="handleClickBtn(this)" class="card w-96 bg-base-100 shadow-xl border-2">
                 <figure class="px-10 pt-10">
                   <img src="prod6.png" alt="Shoes" class="rounded-xl mx-auto " />
                 </figure>
@@ -118,23 +126,27 @@
                     <p> <span id="priceItem">159.00</span> TK</p>
                   </div>
               </div>
-            
-            
+
+
         </div>
     </section>
-    
-    <dialog id="newModal" class="modal flex items-center justify-center">
-        <form method="dialog" class="modal-box w-4/5 max-w-6xl text-center">
-            <img src="congo.png" alt="" class="mx-auto my-4 max-h-60">
-            <h3 class="font-bold text-1xl my-4">Congratulations</h3>
-            <p class="py-4 text-sm text-slate-400">You purchased the product.</p>
+
+
+
+    <input type="checkbox" id="my_modal_6" class="modal-toggle" />
+    <div class="modal">
+        <div class="modal-box flex flex-col items-center justify-center">
+            <img src="congo.png" alt="">
+            <h3 class="font-bold text-lg">Congratulations</h3>
+            <p class="py-4 text-center">You purchased the product</p>
             <div class="modal-action">
-                <button id="go-home" class="btn text-white bg-fuchsia-600 p-2 rounded-lg mb-2" onclick="newModal.close()">Go Home</button>
+                <label id="closeBtn" for="my_modal_6" class="btn text-white bg-fuchsia-600 p-1">Go Home</label>
+                <button id="closeBtn" class="block mx-auto"></button>
             </div>
-        </form>
-    </dialog>
-    
+        </div>
+    </div>
 
     <script src="summersale.js"></script>
+  
 </body>
 </html>
